@@ -1,0 +1,52 @@
+  :root{
+    --blue: #3b82f6;
+    --red:  #ef4444;
+    --bg: #f3f4f6;
+    --card: #ffffff;
+    --muted: #e2e8f3;
+    --highlight: #10b981;
+  }
+  *{box-sizing:border-box;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;}
+  html,body{height:100%;margin:0;background:var(--bg);color:#111827}
+  .container{max-width:1100px;margin:28px auto;padding:18px;}
+  h1{margin:0 0 8px;font-size:20px}
+  p.lead{margin:0 0 18px;color:var(--muted)}
+  /* Setup card */
+  .setup{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+  .card{background:var(--card);border-radius:12px;padding:16px;box-shadow:0 6px 18px rgba(15,23,42,0.06);flex:1;min-width:260px}
+  label{display:block;font-weight:600;margin-bottom:8px}
+  input[type="text"], select{width:100%;padding:10px;border-radius:8px;border:1px solid #d1d5db;font-size:16px}
+  button{cursor:pointer;border:0;padding:10px 14px;border-radius:8px;font-weight:600}
+  .btn-primary{background:var(--blue);color:white}
+  .btn-ghost{background:transparent;border:1px solid #e5e7eb;color:#111827}
+  .muted{color:var(--muted);font-size:13px}
+  /* Game board */
+  .board{display:flex;height:70vh;border-radius:12px;overflow:hidden;box-shadow:0 8px 30px rgba(2,6,23,0.08)}
+  .pane{flex:1;padding:18px;display:flex;flex-direction:column;gap:12px;min-width:260px}
+  .pane.blue{background:linear-gradient(180deg,var(--blue),#2563eb);color:white}
+  .pane.red{background:linear-gradient(180deg,var(--red),#dc2626);color:white}
+  .player-title{font-size:18px;font-weight:700;display:flex;justify-content:space-between;align-items:center}
+  .turn-badge{font-size:13px;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.12)}
+  .guess-entry{display:flex;gap:8px}
+  .guess-entry input{flex:1;padding:10px;border-radius:8px;border:none;font-size:16px}
+  .guess-entry button{padding:10px 12px;border-radius:8px}
+  .list{background:rgba(255,255,255,0.06);padding:10px;border-radius:8px;flex:1;overflow:auto}
+  .guess-row{display:flex;justify-content:space-between;align-items:center;padding:8px;border-bottom:1px dashed rgb(255, 255, 255)}
+  .guess-row:last-child{border-bottom:0}
+  .small{font-size:13px;color:rgba(255,255,255,0.9)}
+  .badge{background:rgba(255,255,255,0.12);padding:6px 8px;border-radius:8px;font-weight:700}
+  .highlight-digit{color:var(--highlight);font-weight:bold;}
+  .timeout-row{color:#fbbf24;font-style:italic;}
+  .highlight-input{width:100%;padding:6px;border-radius:6px;border:none;margin-top:6px;font-size:14px;background:rgb(255, 247, 247);color:rgb(0, 0, 0);}
+  /* overlay on win */
+  .overlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(2,6,23,0.5);z-index:50;visibility:hidden;opacity:0;transition:opacity .18s,visibility .18s}
+  .overlay.show{visibility:visible;opacity:1}
+  .modal{background:white;color:#0f172a;padding:22px;border-radius:12px;min-width:320px;max-width:90%;text-align:center;box-shadow:0 18px 50px rgba(2,6,23,0.4)}
+  .modal h2{margin:0 0 6px}
+  .secrets{display:flex;gap:8px;justify-content:center;margin:12px 0}
+  .secret-card{padding:10px 12px;border-radius:10px;background:#f8fafc;border:1px solid #e6edf3;font-weight:700}
+  .footer-controls{display:flex;gap:8px;justify-content:center;margin-top:12px}
+  .note{font-size:13px;color:var(--muted);margin-top:8px}
+  @media(max-width:800px){
+    .board{flex-direction:column;height:auto}
+  }
